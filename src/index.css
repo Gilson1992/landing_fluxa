@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 /* ===== Oclave Design System Tokens ===== */
 
 @theme {
@@ -30,8 +32,6 @@
 }
 
 /* ===== Google Fonts ===== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-
 /* ===== Base ===== */
 html {
   scroll-behavior: smooth;
@@ -267,4 +267,9 @@ body {
   .ds-section {
     padding: 70px 20px;
   }
+}
+
+
+.ds-hero {
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
 }
