@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+/* ===== Oclave Design System Tokens ===== */
+
+@theme {
+  /* Colors */
+  --color-primary: #1258fd;
+  --color-primary-dark: #0e47d0;
+  --color-surface: #f7f7f7;
+  --color-page-bg: #ffffff;
+  --color-dark: #111111;
+  --color-text-primary: #000000;
+  --color-text-secondary: #666666;
+  --color-text-white: #ffffff;
+  --color-border-default: #dddddd;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.2);
+
+  /* Font Family */
+  --font-sans: "Inter", "Inter Placeholder", sans-serif;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-elevated: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* ===== Base ===== */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-page-bg);
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Typography Presets (from design system) ===== */
+
+/* H1 — 58px/1.2, weight 500, tracking -0.02em */
+.ds-heading-1 {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 5vw, 3.625rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+/* H2 — 48px/1.2, weight 500, tracking -0.02em */
+.ds-heading-2 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+/* H3 — 20px/1.2, weight 500 */
+.ds-heading-3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+/* Body — 16px/1.6, weight 500, tracking -0.02em */
+.ds-body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--color-text-secondary);
+}
+
+/* Small — 14px/1.6, weight 500, tracking -0.02em */
+.ds-small {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: var(--color-text-secondary);
+}
+
+/* ===== Button Components ===== */
+
+/* Primary Button (Light bg, dark text) */
+.ds-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  height: 40px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background-color: var(--color-text-white);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ds-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* Transparent Button (Glass on dark bg) */
+.ds-btn-transparent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  height: 40px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-glass);
+  color: var(--color-text-white);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.ds-btn-transparent:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Solid Blue Button */
+.ds-btn-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  height: 44px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: var(--color-text-white);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.ds-btn-blue:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(18, 88, 253, 0.3);
+}
+
+/* ===== Card Component ===== */
+.ds-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ds-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* ===== Badge / Pill ===== */
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-default);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+/* ===== Section Container ===== */
+.ds-section {
+  width: 100%;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ds-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ===== Motion ===== */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease forwards;
+}
+
+.animate-blur-in {
+  animation: blur-in 0.6s ease forwards;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 810px) {
+  .ds-section {
+    padding: 80px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ds-section {
+    padding: 70px 20px;
+  }
+}
