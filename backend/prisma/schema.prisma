@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum PlanInterest {
+  basic
+  pro
+  enterprise
+}
+
+model Lead {
+  id                 String       @id @default(cuid())
+  name               String
+  email              String
+  phone              String
+  companyName        String
+  professionalsCount Int
+  planInterest       PlanInterest
+  message            String?
+  createdAt          DateTime     @default(now())
+}
+
+model Plan {
+  id               String   @id @default(cuid())
+  name             String   @unique
+  minProfessionals Int
+  maxProfessionals Int?
+  priceMonthly     Decimal  @db.Decimal(10, 2)
+  priceYearly      Decimal  @db.Decimal(10, 2)
+  createdAt        DateTime @default(now())
+}
+
+model Tenant {
+  id        String   @id @default(cuid())
+  name      String
+  schema    String   @unique
+  createdAt DateTime @default(now())
+}
